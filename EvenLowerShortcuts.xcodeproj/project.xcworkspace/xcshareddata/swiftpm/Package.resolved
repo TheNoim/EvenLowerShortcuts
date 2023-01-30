@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "bluesocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/BlueSocket",
+      "state" : {
+        "revision" : "7b23a867008e0027bfd6f4d398d44720707bc8ca",
+        "version" : "2.0.4"
+      }
+    },
+    {
+      "identity" : "shortcutrecorder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kentzo/ShortcutRecorder",
+      "state" : {
+        "revision" : "c86ce0f9be5353ba998966121c7631602a9a36f7",
+        "version" : "3.4.0"
+      }
+    },
+    {
+      "identity" : "throttler",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/boraseoksoon/Throttler",
+      "state" : {
+        "revision" : "22b82175135eee6cad578371ac108b1e2db382a8",
+        "version" : "1.0.6"
+      }
+    }
+  ],
+  "version" : 2
+}

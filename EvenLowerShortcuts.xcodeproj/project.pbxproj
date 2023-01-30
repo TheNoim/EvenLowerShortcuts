@@ -8,18 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		FB7884D429882C2B0027DD47 /* EvenLowerShortcutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884D329882C2B0027DD47 /* EvenLowerShortcutsApp.swift */; };
-		FB7884D629882C2B0027DD47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884D529882C2B0027DD47 /* ContentView.swift */; };
 		FB7884D829882C2B0027DD47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB7884D729882C2B0027DD47 /* Assets.xcassets */; };
 		FB7884DB29882C2B0027DD47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB7884DA29882C2B0027DD47 /* Preview Assets.xcassets */; };
+		FB7884E429882C810027DD47 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = FB7884E329882C810027DD47 /* ShortcutRecorder */; };
+		FB7884E729882E050027DD47 /* YabaiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884E629882E050027DD47 /* YabaiClient.swift */; };
+		FB7884EA29882EDF0027DD47 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = FB7884E929882EDF0027DD47 /* Socket */; };
+		FB7884EF2988330C0027DD47 /* NSScreen+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884EE2988330C0027DD47 /* NSScreen+identifier.swift */; };
+		FB7884F12988346B0027DD47 /* SpaceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884F02988346B0027DD47 /* SpaceObserver.swift */; };
+		FB7884F6298834E10027DD47 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884F5298834E10027DD47 /* Space.swift */; };
+		FB7884F8298834F50027DD47 /* SpaceNameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884F7298834F50027DD47 /* SpaceNameInfo.swift */; };
+		FB7884FA2988358E0027DD47 /* Spaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7884F92988358E0027DD47 /* Spaces.swift */; };
+		FB788503298860BA0027DD47 /* YabaiControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB788502298860BA0027DD47 /* YabaiControl.swift */; };
+		FB788506298870720027DD47 /* Throttler in Frameworks */ = {isa = PBXBuildFile; productRef = FB788505298870720027DD47 /* Throttler */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB7884D029882C2B0027DD47 /* EvenLowerShortcuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvenLowerShortcuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7884D329882C2B0027DD47 /* EvenLowerShortcutsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenLowerShortcutsApp.swift; sourceTree = "<group>"; };
-		FB7884D529882C2B0027DD47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB7884D729882C2B0027DD47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB7884DA29882C2B0027DD47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB7884DC29882C2B0027DD47 /* EvenLowerShortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvenLowerShortcuts.entitlements; sourceTree = "<group>"; };
+		FB7884E629882E050027DD47 /* YabaiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YabaiClient.swift; sourceTree = "<group>"; };
+		FB7884EE2988330C0027DD47 /* NSScreen+identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen+identifier.swift"; sourceTree = "<group>"; };
+		FB7884F02988346B0027DD47 /* SpaceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceObserver.swift; sourceTree = "<group>"; };
+		FB7884F22988349C0027DD47 /* EvenLowerShortcuts-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvenLowerShortcuts-Bridging-Header.h"; sourceTree = "<group>"; };
+		FB7884F5298834E10027DD47 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		FB7884F7298834F50027DD47 /* SpaceNameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNameInfo.swift; sourceTree = "<group>"; };
+		FB7884F92988358E0027DD47 /* Spaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spaces.swift; sourceTree = "<group>"; };
+		FB788502298860BA0027DD47 /* YabaiControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YabaiControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB788506298870720027DD47 /* Throttler in Frameworks */,
+				FB7884E429882C810027DD47 /* ShortcutRecorder in Frameworks */,
+				FB7884EA29882EDF0027DD47 /* Socket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +71,13 @@
 		FB7884D229882C2B0027DD47 /* EvenLowerShortcuts */ = {
 			isa = PBXGroup;
 			children = (
+				FB7884EB298830730027DD47 /* lib */,
+				FB7884E529882D6B0027DD47 /* yabai */,
 				FB7884D329882C2B0027DD47 /* EvenLowerShortcutsApp.swift */,
-				FB7884D529882C2B0027DD47 /* ContentView.swift */,
 				FB7884D729882C2B0027DD47 /* Assets.xcassets */,
 				FB7884DC29882C2B0027DD47 /* EvenLowerShortcuts.entitlements */,
 				FB7884D929882C2B0027DD47 /* Preview Content */,
+				FB7884F22988349C0027DD47 /* EvenLowerShortcuts-Bridging-Header.h */,
 			);
 			path = EvenLowerShortcuts;
 			sourceTree = "<group>";
@@ -67,6 +88,27 @@
 				FB7884DA29882C2B0027DD47 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FB7884E529882D6B0027DD47 /* yabai */ = {
+			isa = PBXGroup;
+			children = (
+				FB7884E629882E050027DD47 /* YabaiClient.swift */,
+				FB788502298860BA0027DD47 /* YabaiControl.swift */,
+			);
+			path = yabai;
+			sourceTree = "<group>";
+		};
+		FB7884EB298830730027DD47 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				FB7884EE2988330C0027DD47 /* NSScreen+identifier.swift */,
+				FB7884F02988346B0027DD47 /* SpaceObserver.swift */,
+				FB7884F5298834E10027DD47 /* Space.swift */,
+				FB7884F7298834F50027DD47 /* SpaceNameInfo.swift */,
+				FB7884F92988358E0027DD47 /* Spaces.swift */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +127,11 @@
 			dependencies = (
 			);
 			name = EvenLowerShortcuts;
+			packageProductDependencies = (
+				FB7884E329882C810027DD47 /* ShortcutRecorder */,
+				FB7884E929882EDF0027DD47 /* Socket */,
+				FB788505298870720027DD47 /* Throttler */,
+			);
 			productName = EvenLowerShortcuts;
 			productReference = FB7884D029882C2B0027DD47 /* EvenLowerShortcuts.app */;
 			productType = "com.apple.product-type.application";
@@ -101,6 +148,7 @@
 				TargetAttributes = {
 					FB7884CF29882C2B0027DD47 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -113,6 +161,11 @@
 				Base,
 			);
 			mainGroup = FB7884C729882C2B0027DD47;
+			packageReferences = (
+				FB7884E229882C810027DD47 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
+				FB7884E829882EDF0027DD47 /* XCRemoteSwiftPackageReference "BlueSocket" */,
+				FB788504298870720027DD47 /* XCRemoteSwiftPackageReference "Throttler" */,
+			);
 			productRefGroup = FB7884D129882C2B0027DD47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB7884D629882C2B0027DD47 /* ContentView.swift in Sources */,
 				FB7884D429882C2B0027DD47 /* EvenLowerShortcutsApp.swift in Sources */,
+				FB7884F12988346B0027DD47 /* SpaceObserver.swift in Sources */,
+				FB7884F6298834E10027DD47 /* Space.swift in Sources */,
+				FB7884E729882E050027DD47 /* YabaiClient.swift in Sources */,
+				FB788503298860BA0027DD47 /* YabaiControl.swift in Sources */,
+				FB7884EF2988330C0027DD47 /* NSScreen+identifier.swift in Sources */,
+				FB7884FA2988358E0027DD47 /* Spaces.swift in Sources */,
+				FB7884F8298834F50027DD47 /* SpaceNameInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvenLowerShortcuts/EvenLowerShortcuts.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -283,6 +343,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.noim.EvenLowerShortcuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EvenLowerShortcuts/EvenLowerShortcuts-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -292,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvenLowerShortcuts/EvenLowerShortcuts.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -310,6 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.noim.EvenLowerShortcuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EvenLowerShortcuts/EvenLowerShortcuts-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -336,6 +400,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB7884E229882C810027DD47 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		FB7884E829882EDF0027DD47 /* XCRemoteSwiftPackageReference "BlueSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/BlueSocket";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		FB788504298870720027DD47 /* XCRemoteSwiftPackageReference "Throttler" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/boraseoksoon/Throttler";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB7884E329882C810027DD47 /* ShortcutRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7884E229882C810027DD47 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			productName = ShortcutRecorder;
+		};
+		FB7884E929882EDF0027DD47 /* Socket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB7884E829882EDF0027DD47 /* XCRemoteSwiftPackageReference "BlueSocket" */;
+			productName = Socket;
+		};
+		FB788505298870720027DD47 /* Throttler */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB788504298870720027DD47 /* XCRemoteSwiftPackageReference "Throttler" */;
+			productName = Throttler;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB7884C829882C2B0027DD47 /* Project object */;
 }
