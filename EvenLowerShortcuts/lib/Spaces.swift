@@ -20,16 +20,16 @@ class Spaces: ObservableObject, SpaceObserverDelegate {
     
     var spaces: [Space] = [];
     
+    let mouseDispatchQueue = DispatchQueue(label: "MouseDispatchQueue", qos: .background)
+    
     private let observer = SpaceObserver()
     private var timer: Timer? = nil;
     
     init() {
         NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { _ in
-            Throttler.throttle(delay: .milliseconds(150)) {
-                Task {
-                    await MainActor.run {
-                        self.updateMouseLocation();
-                    }
+            Throttler.throttle(identifier: "MouseMoved", queue: self.mouseDispatchQueue, delay: .milliseconds(300)) {
+                Task(priority: .background) {
+                    await self.updateMouseLocation();
                 }
             }
         }
@@ -75,7 +75,9 @@ class Spaces: ObservableObject, SpaceObserverDelegate {
         
         self.observer.updateSpaceInformation();
         
-        self.updateMouseLocation()
+        Task(priority: .low) {
+            await self.updateMouseLocation()
+        }
         
 //        self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
 //            self.observeChanges()
@@ -84,23 +86,34 @@ class Spaces: ObservableObject, SpaceObserverDelegate {
 //        self.windowList();
     }
     
-    
-    func didUpdateSpaces(spaces: [Space]) {
-        self.spaces = spaces;
+
+    func updateSpaces(spaces: [Space]) async {
+        await MainActor.run {
+            self.spaces = spaces;
+        }
         for space in spaces {
             if space.isCurrentSpace, space.displayID == screenWithMouse.identifier {
-                spaceIndex = space.spaceNumber
+                await MainActor.run {
+                    self.spaceIndex = space.spaceNumber
+                }
             }
+        }
+    }
+    
+    func didUpdateSpaces(spaces: [Space]) {
+        Task(priority: .userInitiated) {
+            await self.updateSpaces(spaces: spaces);
         }
     }
     
     var index = 0;
     
-    func updateMouseLocation() {
-        
+    func updateMouseLocation() async {
         let mouseLocation = NSEvent.mouseLocation
         
-        self.mouseLocation = mouseLocation;
+        await MainActor.run(body: {
+            self.mouseLocation = mouseLocation;
+        })
         
         let screens = NSScreen.screens
         
@@ -111,7 +124,9 @@ class Spaces: ObservableObject, SpaceObserverDelegate {
             if calculatedScreen!.identifier != self.screenWithMouse.identifier {
                 updateSpaceInformation = true;
             }
-            self.screenWithMouse = calculatedScreen!
+            await MainActor.run(body: {
+                self.screenWithMouse = calculatedScreen!
+            })
             if updateSpaceInformation {
                 self.observer.updateSpaceInformation()
             }

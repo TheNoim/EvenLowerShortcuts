@@ -27,9 +27,7 @@ class YabaiControl {
             print("End focus next in \(diff) seconds")
         }
         
-        await MainActor.run(body: {
-            self.spaceController.updateMouseLocation()
-        })
+        await self.spaceController.updateMouseLocation()
         
         let windowId = self.spaceController.windowIndex;
         
@@ -72,9 +70,7 @@ class YabaiControl {
             print("End focus back in \(diff) seconds")
         }
         
-        await MainActor.run(body: {
-            self.spaceController.updateMouseLocation()
-        })
+        await self.spaceController.updateMouseLocation();
         
         let windowId = self.spaceController.windowIndex;
         

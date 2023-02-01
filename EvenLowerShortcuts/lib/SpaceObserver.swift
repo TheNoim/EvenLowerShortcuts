@@ -10,23 +10,23 @@ import Foundation
 class SpaceObserver {
     private let workspace = NSWorkspace.shared
     private let conn = _CGSDefaultConnection()
-    private let defaults = UserDefaults.standard
+//    private let defaults = UserDefaults.standard
     weak var delegate: SpaceObserverDelegate?
     
     init() {
         workspace.notificationCenter.addObserver(
             self,
-            selector: #selector(updateSpaceInformation),
+            selector: #selector(requestUpdateSpace),
             name: NSWorkspace.activeSpaceDidChangeNotification,
             object: workspace)
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateSpaceInformation),
-            name: NSNotification.Name("ButtonPressed"),
-            object: nil)
     }
     
-    @objc public func updateSpaceInformation() {
+    @objc private func requestUpdateSpace() {
+        print("Request update space information")
+        self.updateSpaceInformation();
+    }
+    
+    public func updateSpaceInformation() {
         let displays = CGSCopyManagedDisplaySpaces(conn) as! [NSDictionary]
         var activeSpaceID = -1
         var spacesIndex = 0
@@ -62,11 +62,12 @@ class SpaceObserver {
                                   isCurrentSpace: isCurrentSpace,
                                   isFullScreen: isFullScreen)
                 
-                if let data = defaults.value(forKey:"spaceNames") as? Data,
+                /**if let data = defaults.value(forKey:"spaceNames") as? Data,
                    let dict = try? PropertyListDecoder().decode(Dictionary<String, SpaceNameInfo>.self, from: data),
                    let saved = dict[spaceID] {
                     space.spaceName = saved.spaceName
-                } else if isFullScreen {
+                } else **/
+                if isFullScreen {
                     if let pid = s["pid"] as? pid_t,
                        let app = NSRunningApplication(processIdentifier: pid),
                        let name = app.localizedName {
@@ -83,7 +84,7 @@ class SpaceObserver {
             }
         }
         
-        defaults.set(try? PropertyListEncoder().encode(updatedDict), forKey: "spaceNames")
+//        defaults.set(try? PropertyListEncoder().encode(updatedDict), forKey: "spaceNames")
         delegate?.didUpdateSpaces(spaces: allSpaces)
     }
 }
