@@ -11,6 +11,8 @@ import AppKit
 import CoreGraphics
 import Throttler
 
+var mouseUpdateIndex = 0
+
 class Spaces: ObservableObject, SpaceObserverDelegate {
     @Published var spaceIndex = 0;
     @Published var screenWithMouse: NSScreen = NSScreen.screens.first!;
@@ -27,6 +29,8 @@ class Spaces: ObservableObject, SpaceObserverDelegate {
     
     init() {
         NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { _ in
+            print("Mouse moved \(mouseUpdateIndex)")
+            mouseUpdateIndex += 1;
             Throttler.throttle(identifier: "MouseMoved", queue: self.mouseDispatchQueue, delay: .milliseconds(300)) {
                 Task(priority: .background) {
                     await self.updateMouseLocation();

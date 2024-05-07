@@ -10,13 +10,21 @@ import AppKit
 
 private let NSScreenNumberKey = NSDeviceDescriptionKey("NSScreenNumber")
 
-extension NSScreen {
+var numberMap: [UInt32: String] = [:]
+
+extension NSScreen {    
     public var identifier: String {
         guard let number = deviceDescription[NSScreenNumberKey] as? NSNumber else {
             return ""
         }
-
-        let uuid = CGDisplayCreateUUIDFromDisplayID(number.uint32Value).takeRetainedValue()
-        return CFUUIDCreateString(nil, uuid) as String
+        
+        if let uuid = numberMap[number.uint32Value] {
+            return uuid
+        }
+                
+        let cfuuid = CGDisplayCreateUUIDFromDisplayID(number.uint32Value).takeRetainedValue()
+        let uuid = CFUUIDCreateString(nil, cfuuid) as String
+        numberMap[number.uint32Value] = uuid;
+        return uuid;
     }
 }

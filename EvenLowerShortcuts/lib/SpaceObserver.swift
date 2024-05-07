@@ -27,6 +27,7 @@ class SpaceObserver {
     }
     
     public func updateSpaceInformation() {
+        print("updateSpaceInformation")
         let displays = CGSCopyManagedDisplaySpaces(conn) as! [NSDictionary]
         var activeSpaceID = -1
         var spacesIndex = 0
